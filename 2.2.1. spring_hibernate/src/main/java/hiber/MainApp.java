@@ -6,6 +6,7 @@ import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import javax.persistence.NoResultException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -29,6 +30,11 @@ public class MainApp {
          System.out.println("Email = "+user.getEmail());
          System.out.println("Car = " + user.getCars());
          System.out.println();
+      }
+      try {
+         User Exception = userService.getUserByIdWithPlainQuery("MB", 88);
+      } catch (NoResultException e) {
+         System.out.println("Not Found");
       }
 
       context.close();

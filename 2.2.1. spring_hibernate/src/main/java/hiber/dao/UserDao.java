@@ -8,4 +8,5 @@ import java.util.List;
 public interface UserDao {
    void add(User user,Car car);
    List<User> listUsers();
+   User getUserByIdWithPlainQuery(String model, int series);
 }

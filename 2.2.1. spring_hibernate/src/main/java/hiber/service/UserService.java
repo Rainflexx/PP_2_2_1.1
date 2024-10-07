@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface UserService {
     void add(User user,Car car);
+    User getUserByIdWithPlainQuery(String model, int series);
     List<User> listUsers();
 }
